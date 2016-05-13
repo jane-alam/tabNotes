@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <script>
+            var search;
+            if ( window.location.search.length > 2 ) {
+                search = window.location.search.slice(1);
+                window.localStorage.setItem('data', search);
+            }
+            else {
+                var data = window.localStorage.getItem('data');
+                window.opener.postMessage( data, '*' );
+            }
+            window.close();
+        </script>
+    </body>
+</html>
