@@ -4,10 +4,10 @@
             var search;
             if ( window.location.search.length > 2 ) {
                 search = window.location.search.slice(1);
-                window.localStorage.setItem('data', search);
+                window.localStorage.setItem('tabNotes_content', search);
             }
             else {
-                var data = window.localStorage.getItem('data');
+                var data = window.localStorage.getItem('tabNotes_content');
                 window.opener.postMessage( data, '*' );
             }
             window.close();
